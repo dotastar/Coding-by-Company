@@ -1,0 +1,24 @@
+class ParkingLot
+{
+    Space[][] spaces;
+
+    ParkingLot(wide, long); // constructor
+
+    FindOpenSpace(TypeOfCar); // find first open space where type matches
+}
+
+enum TypeOfSpace = {compact, handicapped, regular };
+enum TypeOfCar = {compact, handicapped, regular };
+
+class Space
+{
+    TypeOfSpace type;
+    bool empty;
+    // gets and sets here
+    // make sure car type
+}
+
+class car
+{
+    TypeOfCar type;
+}

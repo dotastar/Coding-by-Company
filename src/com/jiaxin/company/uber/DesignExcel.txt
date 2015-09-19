@@ -1,0 +1,25 @@
+//How would you design an Excel sheet's Data structure. You need to perform operations like addition. The excel sheet is very sparse and is used to store numbers in the range 1-65K. Index for a cell is known.
+
+
+class SpreadSheet {		
+	private static final int MAX_CELL_INDEX = 65000;	
+	private final Map<Integer, Map<Integer, String>> data = new HashMap<>();
+	
+	public void setValue(int row, int column, String value){		
+		checkRowAndColumnIndex(row, column);		
+		Map<Integer, String> columnsMap = data.get(row);		
+		if( columnsMap == null ){
+			columnsMap = new HashMap<>();
+			data.put( row, columnsMap );
+		}		
+		columnsMap.put(column, value);
+	}
+	
+	public String getValue(int row, int column){		
+		checkRowAndColumnIndex(row, column);		
+		Map<Integer, String> columnsMap = data.get(row);		
+		if( columnsMap != null ){
+			return columnsMap.get(column);
+		}		
+		return null;
+	}
